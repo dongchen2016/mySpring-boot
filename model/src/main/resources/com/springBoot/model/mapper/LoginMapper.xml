@@ -7,4 +7,11 @@
         WHERE  (USERID = #{userid} OR USERNAME = #{userid})
         AND PASSWORD = #{password}
     </select>
+
+    <insert id="addUser" parameterType="com.springBoot.model.entity.TbUser">
+        insert into TB_USERS VALUES (#{userid},#{username},#{password})
+    </insert>
+    <insert id="addOneThing" parameterType="com.springBoot.model.entity.ThingsInfo">
+        insert into TB_THINGS VALUES(#{level},#{content},#{startTime},#{endTime},null,#{userid})
+    </insert>
 </mapper>

@@ -34,6 +34,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,12 +63,6 @@
             <version>RELEASE</version>
         </dependency>
 
-        <!--日志配置-->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
-
         <!--  mysql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -79,7 +79,6 @@
         </dependency>
 
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
