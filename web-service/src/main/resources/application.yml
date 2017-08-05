@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: WebServiceApplication  # Service registers under this name
+
+server:
+  address: 127.0.0.1
+  port: 5001
