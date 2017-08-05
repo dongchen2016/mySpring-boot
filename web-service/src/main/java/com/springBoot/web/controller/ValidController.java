@@ -6,6 +6,7 @@ import com.springBoot.model.entity.ThingsInfo;
 import com.springBoot.service.TestService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ import java.util.Date;
  * @date: 2017/08/05.
  */
 @RestController
+@RequestMapping("/test")
 public class ValidController {
 
     @Autowired
@@ -24,7 +26,7 @@ public class ValidController {
 
     protected static final Logger log = Logger.getLogger(ValidController.class);
 
-    @RequestMapping("/test/valid")
+    @RequestMapping("/valid")
     public String validUser() {
         log.debug("开始验证用户名和密码是否正确");
         String result = testService.validUser("21201","123");

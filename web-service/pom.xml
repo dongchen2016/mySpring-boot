@@ -78,6 +78,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--alibaba-->
+        <!-- Druid数据库连接池组件 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.18</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
