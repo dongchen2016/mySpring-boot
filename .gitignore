@@ -4,6 +4,7 @@ target
 *.class
 .metadata
 .recommenders
+logs
 RemoteSystemsTempFiles
 *.iml
 .classpath
