@@ -1,3 +1,4 @@
+/*
 package com.springBoot.web.config.druid;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -10,11 +11,13 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
+*/
 /**
  * @description: druid数据库连接池，也可以通过datasource创建连接池
  * @author: 1063:马冬冬
  * @date: 2017/08/05.
- */
+ *//*
+
 @Configuration
 @ComponentScan(basePackages = {"com.springBoot"})
 @PropertySource("classpath:db.properties")
@@ -28,3 +31,4 @@ public class DruidConfig {
         return druidDataSource;
     }
 }
+*/
