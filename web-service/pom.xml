@@ -77,8 +77,13 @@
             <version>1.16.6</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.6.9</version>
+        </dependency>
 
-        <!--alibaba-->
         <!-- Druid数据库连接池组件 -->
         <dependency>
             <groupId>com.alibaba</groupId>
