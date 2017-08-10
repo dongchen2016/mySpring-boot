@@ -1,4 +1,4 @@
-package com.springBoot.web.config.dynamicDataSource;
+package com.springBoot.dynamicDataSource;
 
 import java.lang.annotation.*;
 

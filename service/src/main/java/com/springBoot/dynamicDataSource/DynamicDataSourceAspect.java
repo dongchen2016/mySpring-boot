@@ -1,4 +1,4 @@
-package com.springBoot.web.config.dynamicDataSource;
+package com.springBoot.dynamicDataSource;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;

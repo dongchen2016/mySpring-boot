@@ -1,11 +1,5 @@
-package com.springBoot.web.config.dynamicDataSource;
+package com.springBoot.dynamicDataSource;
 
-
-
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +16,10 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.support.DefaultConversionService;
 import org.springframework.core.env.Environment;
 import org.springframework.core.type.AnnotationMetadata;
+
+import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @description:
@@ -42,7 +40,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
 
     // 数据源
     private DataSource defaultDataSource;
-    private Map<String, DataSource> customDataSources = new HashMap<>();
+    private Map<String, DataSource> customDataSources = new HashMap<String, DataSource>();
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
@@ -122,7 +120,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
     private void initDefaultDataSource(Environment env) {
         // 读取主数据源
         RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(env, "spring.datasource.");
-        Map<String, Object> dsMap = new HashMap<>();
+        Map<String, Object> dsMap = new HashMap<String, Object>();
         dsMap.put("type", propertyResolver.getProperty("type"));
         dsMap.put("driver-class-name", propertyResolver.getProperty("driver-class-name"));
         dsMap.put("url", propertyResolver.getProperty("url"));
@@ -151,7 +149,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         dataBinder.setIgnoreUnknownFields(true);//true
         if(dataSourcePropertyValues == null){
             Map<String, Object> rpr = new RelaxedPropertyResolver(env, "spring.datasource").getSubProperties(".");
-            Map<String, Object> values = new HashMap<>(rpr);
+            Map<String, Object> values = new HashMap<String, Object>(rpr);
             // 排除已经设置的属性
             values.remove("type");
             values.remove("driver-class-name");

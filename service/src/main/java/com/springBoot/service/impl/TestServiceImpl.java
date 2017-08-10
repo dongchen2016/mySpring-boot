@@ -41,7 +41,7 @@ public class TestServiceImpl implements TestService {
         return gson.toJson(map);
     }
 
-    ;
+
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor={OperateDbException.class,Exception.class})

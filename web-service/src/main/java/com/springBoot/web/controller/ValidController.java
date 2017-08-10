@@ -3,6 +3,8 @@ package com.springBoot.web.controller;
 import com.springBoot.exceptions.OperateDbException;
 import com.springBoot.model.entity.TbUser;
 import com.springBoot.model.entity.ThingsInfo;
+import com.springBoot.model.mapper.QueryMapper;
+import com.springBoot.service.DynamicDateSourceService;
 import com.springBoot.service.TestService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ public class ValidController {
 
     @Autowired
     private TestService testService;
+
+    @Autowired
+    private DynamicDateSourceService dynamicDateSourceService;
 
     protected static final Logger log = Logger.getLogger(ValidController.class);
 
@@ -57,4 +62,14 @@ public class ValidController {
         }
         return "";
     }
+
+    @RequestMapping("query")
+    public String getUser(){
+        String rs1 = dynamicDateSourceService.getUserName("19770823");
+        String rs2 = dynamicDateSourceService.getUserNameDs1("19770823");
+        String rs3 = dynamicDateSourceService.getUserNameDs2("19770823");
+
+        return "ok";
+    }
+
 }
