@@ -63,6 +63,9 @@ public class ValidController {
         return "";
     }
 
+    /**
+     * 测试 spring-boot多数据源
+     */
     @RequestMapping("query")
     public String getUser(){
         String rs1 = dynamicDateSourceService.getUserName("19770823");
